@@ -9,3 +9,6 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+
+INSERT INTO Category VALUES ('Personnel');
+INSERT INTO Category VALUES ('Professionnel');
