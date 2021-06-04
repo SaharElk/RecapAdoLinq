@@ -10,27 +10,17 @@ namespace ADOLinq
         static void Main(string[] args)
         {
             // Test Connection
-            using (SqlConnection sqlConnection = new SqlConnection())
+            Connection connection = new Connection(SqlClientFactory.Instance, @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ADOLinq;Integrated Security=True;");
+
+            Command command = new Command("SELECT Name FROM Category;", false);
+
+            DataTable dataTable = connection.GetDataTable(command);
+
+            foreach (DataRow dataRow in dataTable.Rows)
             {
-                sqlConnection.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ADOLinq;Integrated Security=True;";
-
-                using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
-                {
-                    sqlCommand.CommandText = "SELECT Name FROM Category;";
-
-                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter())
-                    {
-                        sqlDataAdapter.SelectCommand = sqlCommand;
-                        DataTable dataTable = new DataTable();
-                        sqlDataAdapter.Fill(dataTable);
-
-                        foreach (DataRow dataRow in dataTable.Rows)
-                        {
-                            Console.WriteLine($"{dataRow["Name"]}");
-                        }
-                    }
-                }
+                Console.WriteLine($"{dataRow["Name"]}");
             }
+
 
         }
     }
