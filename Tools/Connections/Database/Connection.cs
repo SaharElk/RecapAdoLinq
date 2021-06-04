@@ -62,6 +62,8 @@ namespace Tools.Connections.Database
                 //créer la commande SQL (DbCommand)
                 using (DbCommand dbCommand = CreateCommand(command, dbConnection))
                 {
+                    dbConnection.Open();
+
                     using (DbDataReader sqlDataReader = dbCommand.ExecuteReader())
                     {
                         while (sqlDataReader.Read())
