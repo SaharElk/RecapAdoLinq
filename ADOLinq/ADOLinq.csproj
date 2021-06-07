@@ -9,4 +9,11 @@
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Client\Data\" />
+    <Folder Include="Client\Mappers\" />
+    <Folder Include="Client\Services\" />
+    <Folder Include="Client\Repositories\" />
+  </ItemGroup>
+
 </Project>
