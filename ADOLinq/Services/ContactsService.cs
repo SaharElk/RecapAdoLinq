@@ -1,15 +1,13 @@
 ﻿using ADOLinq.Models;
 using ADOLinq.Extensions;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tools.Connections.Database;
+using ADOLinq.Repositories;
 
 namespace ADOLinq.Services
 {
-    public class ContactsService
+    public class ContactsService : IContactsRepository
     {
         private readonly Connection _connection;
 

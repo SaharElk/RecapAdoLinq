@@ -1,15 +1,13 @@
 ﻿using ADOLinq.Extensions;
 using ADOLinq.Models;
-using System;
+using ADOLinq.Repositories;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tools.Connections.Database;
 
 namespace ADOLinq.Services
 {
-    public class CategoriesService
+    public class CategoriesService : ICategoriesRepository
     {
         private readonly Connection _connection;
 
