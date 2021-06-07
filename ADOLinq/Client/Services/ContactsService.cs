@@ -1,5 +1,6 @@
 ﻿using ADOLinq.Client.Data;
 using ADOLinq.Client.Mappers;
+using ADOLinq.Client.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using G = ADOLinq.Services;
 
 namespace ADOLinq.Client.Services
 {
-    public class ContactsService
+    public class ContactsService : IContactsRepository
     {
         private readonly G.ContactsService _contactsService;
 

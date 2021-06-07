@@ -1,12 +1,13 @@
 ﻿using ADOLinq.Client.Data;
 using ADOLinq.Client.Mappers;
+using ADOLinq.Client.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 using G = ADOLinq.Services;
 
 namespace ADOLinq.Client.Services
 {
-    public class CategoriesService
+    public class CategoriesService : ICategoriesRepository
     {
         private readonly G.CategoriesService _categoriesService;
 
